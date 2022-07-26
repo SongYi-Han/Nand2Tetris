@@ -1,7 +1,7 @@
 
 <img width="600" alt="Screen Shot 2022-07-26 at 19 53 03" src="https://user-images.githubusercontent.com/40763359/181077003-236f90ed-40bd-446b-8c60-498b3d593cb7.png">  
   
-In this project, we will build 15 logic gates which can be used for complex chip in later project, only with NAND gate. In other words, we will write 15 hdl files with given NAND.hdl and test them using hardware simulator.  
+In the project 1, we will build 15 logic gates which can be used for complex chip in later project, only with NAND gate. In other words, we will write 15 hdl files with given NAND.hdl and test them using hardware simulator.  
 
 Slides for project1 can be found here : https://drive.google.com/file/d/1MY1buFHo_Wx5DPrKhCNSA2cm5ltwFJzM/view
   
