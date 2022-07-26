@@ -1,18 +1,20 @@
 
+## Project description 📋
 <img width="600" alt="Screen Shot 2022-07-26 at 19 53 03" src="https://user-images.githubusercontent.com/40763359/181077003-236f90ed-40bd-446b-8c60-498b3d593cb7.png">  
   
 In the project 1, we will build 15 logic gates which can be used for complex chip in later project, only with NAND gate. In other words, we will write 15 hdl files with given NAND.hdl and test them using hardware simulator.  
 
-Slides for project1 can be found here : https://drive.google.com/file/d/1MY1buFHo_Wx5DPrKhCNSA2cm5ltwFJzM/view
+
   
+**Relevant reading**    
+* Lecture slides for project1 : https://drive.google.com/file/d/1MY1buFHo_Wx5DPrKhCNSA2cm5ltwFJzM/view   
+* Appendix B. Hardware Description Language : https://drive.google.com/file/d/1dPj4XNby9iuAs-47U9k3xtYy9hJ-ET0T/view
+  
+-----
+## Tools and set up 🛠
 **Tools for project1** : Hardware simulator  
 Simulates and tests logic gates and chips implemented in the HDL (Hardware Description Language). Used in hardware construction projects.  
   
-**Relevant reading**    
-Appendix B. Hardware Description Language : https://drive.google.com/file/d/1dPj4XNby9iuAs-47U9k3xtYy9hJ-ET0T/view
-  
------
-## set up 
 To run hardware simulator, you must use the command line :
 `~/Desktop/nand2tetris/tools/HardwareSimulator.sh`
   
@@ -23,7 +25,7 @@ correct the permissions on these files, type:
 `chmod u+x ~/Desktop/nand2tetris/tools/*.sh`
   
 
-tutorial: https://www.nand2tetris.org/_files/ugd/44046b_bfd91435260748439493a60a8044ade6.pdf
+**Tutorial for hardware simulator** : https://www.nand2tetris.org/_files/ugd/44046b_bfd91435260748439493a60a8044ade6.pdf
 
 -----
 ## Theory behind
