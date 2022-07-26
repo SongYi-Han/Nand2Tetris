@@ -1,7 +1,7 @@
 # Nand2Tetris :Building a modern computer from scratch
 https://www.nand2tetris.org/course  
   
-We will build the hardware platform of a simple yet powerful computer, called Hack (a 16-bit computer equipped with a
+In this project, we will build the hardware platform of a simple yet powerful computer, called Hack (a 16-bit computer equipped with a
 screen and a keyboard). Once hardware platform is ready, we will build the computer’s software hierarchy, consisting of an assembler, a virtual machine, a simple Java-like language called Jack, a compiler for it, and a mini operating system, written in Jack.
 
 **Keywords**: #logicGate #HDL #hardwareSimulator #ALU #RAM #memory #CPU
