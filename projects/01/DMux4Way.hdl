@@ -16,24 +16,40 @@ CHIP DMux4Way {
     OUT a, b, c, d;
 
     PARTS:
+    /*
+      SOLUTION 1 USING PRIMITIVE "AND", "NOT"
 
-    Not(in=sel[0],out=notR);
-    Not(in=sel[1],out=notL);
-    And(a=notR,b=notL,out=NotLandNotR);
-    And(a=in,b=NotLandNotR,out=a);
+      Not(in=sel[0],out=notR);
+      Not(in=sel[1],out=notL);
+      And(a=notR,b=notL,out=NotLandNotR);
+      And(a=in,b=NotLandNotR,out=a);
 
-    And(a=sel[0],b=notL,out=NotLandR);
-    And(a=in,b=NotLandR,out=b);
+      And(a=sel[0],b=notL,out=NotLandR);
+      And(a=in,b=NotLandR,out=b);
 
-    And(a=sel[1],b=notR,out=LandNotR);
-    And(a=in,b=LandNotR,out=c);
+      And(a=sel[1],b=notR,out=LandNotR);
+      And(a=in,b=LandNotR,out=c);
 
-    And(a=sel[1],b=sel[0],out=LAndR);
-    And(a=in,b=LAndR,out=d);
+      And(a=sel[1],b=sel[0],out=LAndR);
+      And(a=in,b=LAndR,out=d);
+    */
+
+    /* SOLUTION 2 USING DMUX */
+    DMux(in=in ,sel=sel[1] ,a=dMuxAB ,b=dMuxCD);
+    DMux(in=dMuxAB ,sel=sel[0], a=a ,b=b);
+    DMux(in=dMuxCD ,sel=sel[0], a=c ,b=d);
 }
 
 /*
 DMux(in=in ,sel=sel[1] ,a=dMuxAB ,b=dMuxCD);
+DMux(in=dMuxAB ,sel=sel[0], a=a ,b=b);
+DMux(in=dMuxCD ,sel=sel[0], a=c ,b=d);
+
+
+1 - 00 - 1000
+1 - 01 - 0100
+1 - 10 - 0010
+1 - 11 - 0001
 
 0 - 00 - 0000
 1 - 00 - 1000
@@ -42,10 +58,5 @@ DMux(in=in ,sel=sel[1] ,a=dMuxAB ,b=dMuxCD);
 0 - 10 - 0000
 1 - 10 - 0010
 0 - 11 - 0000
-1 - 11 - 0001
-
-1 - 00 - 1000
-1 - 01 - 0100
-1 - 10 - 0010
 1 - 11 - 0001
 */
