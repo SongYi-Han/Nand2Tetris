@@ -1,8 +1,8 @@
 # Project 2: Boolean Arithmetic
 
 ### Resources
-lecture slide : https://drive.google.com/file/d/1ie9s3GjM2TrvL7PrEZJ00gEwezgNLOBm/view
-book : 
+lecture slide : https://drive.google.com/file/d/1ie9s3GjM2TrvL7PrEZJ00gEwezgNLOBm/view   
+book : https://www.nand2tetris.org/_files/ugd/44046b_89c60703ebfc4bf39acef13bdc050f5d.pdf
 
 ### Theory
 * representing number
