@@ -1,10 +1,21 @@
 # Project 2: Boolean Arithmetic
 
-### Resources
+## Project Description
+
+**Background**  
+The centerpiece of the computer's architecture is the CPU, or Central Processing Unit, and the centerpiece of the CPU is the ALU, or Arithmetic-Logic Unit. In this project you will gradually build a set of chips, culminating in the construction of the ALU chip of the Hack computer. All the chips built in this project are standard, except for the ALU itself, which differs from one computer architecture to another.
+   
+**Objective**  
+Build all the chips described in Chapter 2 (see list below), leading up to an Arithmetic Logic Unit - the Hack computer's ALU. The only building blocks that you can use are the chips described in chapter 1 and the chips that you will gradually build in this project.
+  
+  <img width="600" alt="Screen Shot 2022-08-09 at 19 50 39" src="https://user-images.githubusercontent.com/40763359/183724569-dee43c5f-2e5b-4aa4-be3d-981df2770ee5.png">
+
+   
+**relevant reading**   
 lecture slide : https://drive.google.com/file/d/1ie9s3GjM2TrvL7PrEZJ00gEwezgNLOBm/view   
 book : https://www.nand2tetris.org/_files/ugd/44046b_89c60703ebfc4bf39acef13bdc050f5d.pdf
 
-### Theory
+## Theory 
 * representing number
 * Binary numbers
 * Boolean arithmetic
