@@ -13,5 +13,61 @@ CHIP FullAdder {
         carry;   // Left bit of a + b + c
 
     PARTS:
-    // Put you code here:
+    HalfAdder(a=a,b=b ,sum=s1 , carry=c1 );
+    HalfAdder(a=c ,b=s1 ,sum=sum , carry=c2 );
+    Or(a=c1,b=c2,out=carry);
+
+
 }
+
+/**
+// Put you code here:
+    // a xor (b xor c) = sum 
+    Xor(a=b ,b=c ,out=bXorC );
+    Xor(a=a ,b=bXorC ,out=sum );
+
+    Xor(a=a,b=b,out=aXorB);
+    And(a=a,b=b,out=aAndB);
+    And(a=c,b=aXorB, out=cAndaXorB);
+    Or(a=cAndaXorB,b=aAndB, out=carry);
+
+
+000 00
+001 10
+010 10
+011 01
+100 10
+101 01
+110 01
+111 11
+
+011 01
+101 01
+110 01
+111 11
+
+(!abc)+(a!bc)+(ab!c)+(abc)
+c(!ab+a!b)+ab(!c+c)
+c(a xor b) + ab
+
+
+
+001 1
+010 1
+100 1
+111 1
+
+
+(!a & !b & c) or (!a & b & !c) or (a & !b & !c) or (a & b & c)
+
+!a(!bc or b!c) or a(!b!c or bc)
+!a(b xor c) or a(not(b xor c))
+a xor (b xor c) = sum 
+
+!ad or a!d
+a xor d
+
+d == b xor c
+
+
+**/
