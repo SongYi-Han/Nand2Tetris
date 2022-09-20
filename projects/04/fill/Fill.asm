@@ -1,14 +1,64 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/04/Fill.asm
+// File name: projects/04/Mult.asm
 
-// Runs an infinite loop that listens to the keyboard input.
-// When a key is pressed (any key), the program blackens the screen,
-// i.e. writes "black" in every pixel;
-// the screen should remain fully black as long as the key is pressed. 
-// When no key is pressed, the program clears the screen, i.e. writes
-// "white" in every pixel;
-// the screen should remain fully clear as long as no key is pressed.
+// Multiplies R0 and R1 and stores the result in R2.
+// (R0, R1, R2 refer to RAM[0], RAM[1], and RAM[2], respectively.)
+//
+// This program only needs to handle arguments that satisfy
+// R0 >= 0, R1 >= 0, and R0*R1 < 32768.
 
 // Put your code here.
+// add x, n times 
+
+// 
+// if @kbd != 0 :
+//  i = 0
+//  while @screen + i <= 24575: 
+// 	@screen + i == -1 
+// 	i += 1
+// END
+
+(RESET)
+@KBD 
+D=M
+@WHITE
+D;JEQ // if input = 0, go to white
+@FILL
+0; JMP // if input != 0, go to fill
+
+(WHITE)
+@i
+M=0 // i=0
+D=M
+@SCREEN
+A=A+D // A=16384 + i 
+D=A
+M=0  // black
+@i
+M = M+1 // i=i+1
+@24575
+D=D-A
+@RESET
+D;JGE // if A > 24575, go to RESET
+@WHITE
+0;JGE
+   
+(FILL)
+@i
+M=0 // i=0
+D=M
+@SCREEN
+A=A+D // A=16384 + i 
+D=A
+M=-1  // fill
+@i
+M = M+1 // i=i+1
+@24575
+D=D-A 
+@RESET
+D;JGE // if A > 24575, go to RESET
+@FILL
+0; JMP // if A <= 24575, go to LOOP
+
