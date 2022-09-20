@@ -12,41 +12,52 @@
 // Put your code here.
 // add x, n times 
 
-// i = 0
-// sum = 0 
-// x= R0 
-// n= R1
+// 
+// if @kbd != 0 :
+//  i = 0
+//  while @screen + i <= 24575: 
+// 	@screen + i == -1 
+// 	i += 1
+// END
 
-// while i <= n 
-// 	sum += x 
-// 	i += 1 
-
-// R2 = sum 
-
+(RESET)
+@KBD 
+D=M
 @i
-M=1 
-@sum
-M=0
+M=0 // i=0
+@WHITE
+D;JEQ // if input = 0, go to white
+@FILL
+0; JMP // if input != 0, go to fill
 
-(LOOP)
-	@i
-	D=M
-	@R1
-	D=D-M // D = i - n 
-	@END
-	D;JGT // if i>n go to END
-
-	@R0
-	D=M
-	@sum 
-	M=M+D // sum = sum + x
-	@i
-	M = M+1 // i=i+1
-	@LOOP
-	0; JMP // go to LOOP
-
-(END)
-	@END 
-	0; JMP // infinite loop
-
-
+(WHITE)
+@i
+D=M
+@SCREEN // @16384
+A=A+D // A=16384 + i   
+D=A
+M=0  // white
+@i
+M = M+1 // i=i+1
+@24575
+D=D-A
+@RESET
+D;JGE // if A > 24575, go to RESET
+@WHITE
+0;JGE
+   
+(FILL)
+@i
+D=M
+@SCREEN
+A=A+D // A=16384 + i 
+D=A
+M=-1  // fill
+@i
+M = M+1 // i=i+1
+@24575
+D=D-A 
+@RESET
+D;JGE // if A > 24575, go to RESET
+@FILL
+0; JMP // if A <= 24575, go to LOOP
